@@ -127,6 +127,7 @@ private void cargarDatosLibros() {
         ano_publicacion = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         Cantidad = new javax.swing.JTextField();
+        Salir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -263,6 +264,14 @@ private void cargarDatosLibros() {
             }
         });
 
+        Salir.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        Salir.setText("Salir");
+        Salir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SalirActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -270,7 +279,9 @@ private void cargarDatosLibros() {
             .addGroup(layout.createSequentialGroup()
                 .addGap(70, 70, 70)
                 .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Salir)
+                .addGap(36, 36, 36))
             .addGroup(layout.createSequentialGroup()
                 .addGap(30, 30, 30)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -326,7 +337,9 @@ private void cargarDatosLibros() {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(16, 16, 16)
-                .addComponent(jLabel1)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1)
+                    .addComponent(Salir))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(29, 29, 29)
@@ -371,6 +384,7 @@ private void cargarDatosLibros() {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void IsbnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IsbnActionPerformed
@@ -587,6 +601,13 @@ try {
             Cantidad.setText("");
     }//GEN-LAST:event_limpiarActionPerformed
 
+    private void SalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalirActionPerformed
+    
+// Cerrar la ventana actual
+    this.dispose();
+
+    }//GEN-LAST:event_SalirActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -628,6 +649,7 @@ try {
     private javax.swing.JTextField Editorial;
     private javax.swing.JTextField Genero;
     private javax.swing.JTextField Isbn;
+    private javax.swing.JButton Salir;
     private javax.swing.JTextField Titulo;
     private javax.swing.JTextField ano_publicacion;
     private javax.swing.JButton eliminar;

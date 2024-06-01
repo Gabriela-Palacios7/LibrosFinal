@@ -1,20 +1,12 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
 package libros;
 
-/**
- *
- * @author Gabriela
- */
 public class Libros {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
+        // Crear una instancia de la ventana de inicio de sesión
+        Login login = new Login();
+        
+        // Hacer visible la ventana de inicio de sesión
+        login.setVisible(true);
     }
-    
 }

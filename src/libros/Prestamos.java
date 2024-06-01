@@ -35,7 +35,7 @@ public class Prestamos extends javax.swing.JFrame {
         cargarDatosLibros(); // Cargar los datos de los libros al iniciar la aplicación
         configurarBusqueda(); // Configurar la búsqueda
         asignarFechaSistema(); // Asignar la fecha del sistema
-         Usuario.setEditable(false); // Hacer que el campo no sea editable
+      
     }
     
   
@@ -140,9 +140,11 @@ public class Prestamos extends javax.swing.JFrame {
         fecha = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         calendario = new com.toedter.calendar.JCalendar();
-        jButton1 = new javax.swing.JButton();
+        prestar = new javax.swing.JButton();
+        prestar1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximizedBounds(new java.awt.Rectangle(0, 0, 0, 0));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel1.setText("PRESTAMO DE LIBROS");
@@ -196,53 +198,70 @@ public class Prestamos extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel5.setText("Fecha Devolución");
 
-        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton1.setText("Prestar");
+        calendario.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        prestar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        prestar.setText("Prestar");
+        prestar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                prestarActionPerformed(evt);
+            }
+        });
+
+        prestar1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        prestar1.setText("Salir");
+        prestar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                prestar1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(52, 52, 52)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel2)
+                .addGap(18, 18, 18)
+                .addComponent(Usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(87, 87, 87))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 416, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(60, 60, 60)
-                                        .addComponent(jLabel5))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(68, 68, 68)
-                                        .addComponent(fecha, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 77, Short.MAX_VALUE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(calendario, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(10, 10, 10))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(93, 93, 93)
-                                .addComponent(jButton1)
-                                .addGap(0, 0, Short.MAX_VALUE))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(337, 337, 337)
+                        .addComponent(jLabel4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(fecha, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(387, 387, 387))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 416, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(52, 52, 52)
-                                .addComponent(jLabel1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel2))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(22, 22, 22)
+                                .addGap(16, 16, 16)
                                 .addComponent(jLabel3)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(buscar, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(buscar, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(0, 0, Short.MAX_VALUE)
+                                        .addComponent(calendario, javax.swing.GroupLayout.PREFERRED_SIZE, 364, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(33, 33, 33))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(prestar)
+                                        .addGap(37, 37, 37)
+                                        .addComponent(prestar1)
+                                        .addGap(0, 0, Short.MAX_VALUE))))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel4)))
-                        .addGap(18, 18, 18)
-                        .addComponent(Usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(76, 76, 76))
+                                .addComponent(jLabel5)
+                                .addGap(172, 172, 172))))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -252,32 +271,131 @@ public class Prestamos extends javax.swing.JFrame {
                     .addComponent(jLabel1)
                     .addComponent(jLabel2)
                     .addComponent(Usuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel3)
-                        .addComponent(buscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(fecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(fecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel3)
+                            .addComponent(buscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(16, 16, 16)
                         .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(calendario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(26, 26, 26)
-                        .addComponent(jButton1)))
-                .addGap(82, 82, 82))
+                        .addComponent(calendario, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(prestar)
+                            .addComponent(prestar1))))
+                .addContainerGap(29, Short.MAX_VALUE))
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void UsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsuarioActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_UsuarioActionPerformed
+
+    private void prestarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_prestarActionPerformed
+      int selectedRow = libros.getSelectedRow();
+
+    if (selectedRow == -1) {
+        JOptionPane.showMessageDialog(this, "Seleccione un libro de la tabla.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+        return;
+    }
+
+    // Obtener los datos del libro seleccionado
+    String isbn = (String) libros.getValueAt(selectedRow, 0);
+    int cantidadDisponible = (int) libros.getValueAt(selectedRow, 6);
+    String usuario = Usuario.getText();
+    String fechaPrestamo = fecha.getText();
+    Date fechaDevolucion = calendario.getDate();
+    
+    if (fechaDevolucion == null) {
+        JOptionPane.showMessageDialog(this, "Seleccione una fecha de devolución.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+        return;
+    }
+
+    // Verificar que la fecha de devolución no sea menor que la fecha de préstamo
+    SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+    Date fechaPrestamoDate;
+    try {
+        fechaPrestamoDate = dateFormat.parse(fechaPrestamo);
+    } catch (Exception e) {
+        JOptionPane.showMessageDialog(this, "Error al analizar la fecha de préstamo.", "Error", JOptionPane.ERROR_MESSAGE);
+        return;
+    }
+
+    if (fechaDevolucion.before(fechaPrestamoDate)) {
+        JOptionPane.showMessageDialog(this, "La fecha de devolución no puede ser menor a la fecha de préstamo.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+        return;
+    }
+
+    // Preguntar si está seguro de prestar el libro
+    int cantidadPrestar = 1; // Predeterminado a 1
+    try {
+        cantidadPrestar = Integer.parseInt(JOptionPane.showInputDialog(this, "Ingrese la cantidad a prestar:", "Cantidad a prestar", JOptionPane.PLAIN_MESSAGE));
+    } catch (NumberFormatException e) {
+        JOptionPane.showMessageDialog(this, "Cantidad no válida.", "Error", JOptionPane.ERROR_MESSAGE);
+        return;
+    }
+
+    if (cantidadPrestar <= 0 || cantidadPrestar > cantidadDisponible) {
+        JOptionPane.showMessageDialog(this, "Cantidad no válida. Verifique la cantidad disponible.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+        return;
+    }
+
+    int confirmar = JOptionPane.showConfirmDialog(this, "¿Está seguro de que desea prestar este libro?", "Confirmar préstamo", JOptionPane.YES_NO_OPTION);
+    if (confirmar != JOptionPane.YES_OPTION) {
+        return;
+    }
+
+    // Realizar el préstamo
+    try {
+        Connection conexion = Conexion.conectar(); // Suponiendo que tienes una clase Conexion con el método conectar
+
+        // Insertar el préstamo en la tabla prestamos
+        String consultaPrestamo = "INSERT INTO prestamos (id_libro, id_usuario, fecha_prestamo, fecha_devolucion) VALUES (?, ?, ?, ?)";
+        PreparedStatement pstPrestamo = conexion.prepareStatement(consultaPrestamo);
+        pstPrestamo.setString(1, isbn);
+        pstPrestamo.setString(2, usuario);
+        pstPrestamo.setDate(3, new java.sql.Date(fechaPrestamoDate.getTime()));
+        pstPrestamo.setDate(4, new java.sql.Date(fechaDevolucion.getTime()));
+        pstPrestamo.executeUpdate();
+
+        // Actualizar la cantidad disponible en la tabla libros
+        String consultaActualizar = "UPDATE libros SET cantidad_disponible = cantidad_disponible - ? WHERE isbn = ?";
+        PreparedStatement pstActualizar = conexion.prepareStatement(consultaActualizar);
+        pstActualizar.setInt(1, cantidadPrestar);
+        pstActualizar.setString(2, isbn);
+        pstActualizar.executeUpdate();
+
+        // Cerrar la conexión
+        conexion.close();
+
+        // Mostrar mensaje de éxito
+        JOptionPane.showMessageDialog(this, "Préstamo realizado exitosamente.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
+
+        // Recargar los datos de la tabla de libros
+        cargarDatosLibros();
+
+    } catch (SQLException e) {
+        JOptionPane.showMessageDialog(this, "Error al realizar el préstamo: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+    }
+    }//GEN-LAST:event_prestarActionPerformed
+
+    private void prestar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_prestar1ActionPerformed
+     
+// Cerrar la ventana actual
+    this.dispose();
+
+    }//GEN-LAST:event_prestar1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -319,7 +437,6 @@ public class Prestamos extends javax.swing.JFrame {
     private javax.swing.JTextField buscar;
     private com.toedter.calendar.JCalendar calendario;
     private javax.swing.JTextField fecha;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -327,5 +444,7 @@ public class Prestamos extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable libros;
+    private javax.swing.JButton prestar;
+    private javax.swing.JButton prestar1;
     // End of variables declaration//GEN-END:variables
 }

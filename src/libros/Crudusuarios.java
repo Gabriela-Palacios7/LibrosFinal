@@ -115,6 +115,7 @@ public class Crudusuarios extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         eliminar = new javax.swing.JButton();
         Contrasena = new javax.swing.JPasswordField();
+        salir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -227,6 +228,14 @@ public class Crudusuarios extends javax.swing.JFrame {
             }
         });
 
+        salir.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        salir.setText("Salir");
+        salir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                salirActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -256,12 +265,15 @@ public class Crudusuarios extends javax.swing.JFrame {
                         .addGap(56, 56, 56)
                         .addComponent(guardar)
                         .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(limpiar)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(modificar)
-                                .addGap(18, 18, 18)
-                                .addComponent(eliminar)))))
+                        .addComponent(modificar)
+                        .addGap(18, 18, 18)
+                        .addComponent(eliminar))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(limpiar)
+                        .addGap(18, 18, 18)
+                        .addComponent(salir)
+                        .addGap(105, 105, 105)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 409, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(51, Short.MAX_VALUE))
@@ -301,8 +313,10 @@ public class Crudusuarios extends javax.swing.JFrame {
                             .addComponent(guardar)
                             .addComponent(modificar)
                             .addComponent(eliminar))
-                        .addGap(10, 10, 10)
-                        .addComponent(limpiar))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(limpiar)
+                            .addComponent(salir)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 344, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -310,6 +324,7 @@ public class Crudusuarios extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void limpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_limpiarActionPerformed
@@ -494,6 +509,13 @@ if (confirmacion == JOptionPane.YES_OPTION) {
 
     }//GEN-LAST:event_eliminarActionPerformed
 
+    private void salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salirActionPerformed
+     
+// Cerrar la ventana actual
+    this.dispose();
+
+    }//GEN-LAST:event_salirActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -546,6 +568,7 @@ if (confirmacion == JOptionPane.YES_OPTION) {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton limpiar;
     private javax.swing.JButton modificar;
+    private javax.swing.JButton salir;
     private javax.swing.JTable usuarios;
     // End of variables declaration//GEN-END:variables
 }
